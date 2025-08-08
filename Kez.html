@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hallo Kezia</title>
+  <!-- Font lucu -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+      font-family: 'Baloo 2', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 💙 Emoji love pattern */
+    .emoji-background {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      font-size: 3.5rem;
+      color: rgba(0, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      animation: scrollLove 60s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes scrollLove {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-50px, -50px);
+      }
+    }
+
+    .emoji-background span {
+      margin: 10px;
+    }
+
+    .container {
+      z-index: 1;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #00ffe1;
+      text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffff, 0 0 40px #00ffe1;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #bffeff;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1rem;
+      background: #00ffe1;
+      color: #000;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #00ffe1;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffe1;
+      border: 1px solid #00ffe1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 💙 Background emoji -->
+  <div class="emoji-background">
+    <!-- Banyak love 💙 -->
+    <script>
+      // Buat grid love 💙
+      for (let i = 0; i < 400; i++) {
+        document.write('<span>💙</span>');
+      }
+    </script>
+  </div>
+
+  <!-- Konten -->
+  <div class="container">
+    <h1>HALLO KEZIA</h1>
+    <p>ini aku raja :)</p>
+    <a href="indeks.html"><button class="btn">tekan aku</button></a>
+  </div>
+</body>
+</html>
+<script>
+  // Tambahkan efek animasi pada tombol
+  const button = document.querySelector('.btn');
+  button.addEventListener('mouseover', () => {
+    button.style.transform = 'scale(1.1)';
+  });
+  button.addEventListener('mouseout', () => {
+    button.style.transform = 'scale(1)';
+  });
+  // Tambahkan efek suara saat tombol ditekan
+  button.addEventListener('click', () => {
+    const audio = new Audio('klik.mp3'); // Pastikan file klik.mp3 ada di direktori yang sama
+    audio.play();
+  });
+</script>
+<script>
+  // Tambahkan efek animasi pada emoji
+  const emojis = document.querySelectorAll('.emoji-background span');
+  emojis.forEach(emoji => {
+    emoji.style.animation = 'float 6s ease-in-out infinite';
+    emoji.style.animationDelay = `${Math.random() * 5}s`;
+  });
+
+  // Efek float untuk emoji
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
